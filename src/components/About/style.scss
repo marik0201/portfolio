@@ -1,0 +1,14 @@
+@import '../../styles/colors.scss';
+
+.about {
+  text-align: left;
+  line-height: 2.5em;
+  & h1 {
+    font-size: 2.5em;
+    color: $gray-primary;
+  }
+  & p {
+    font-size: 1.7em;
+    color: $gray-light;
+  }
+}

@@ -1,0 +1,44 @@
+@import '../../styles/colors.scss';
+
+.contact {
+  border-top: 2px solid #c9c9c9;
+  h1 {
+    color: $gray-primary;
+  }
+}
+
+.contact-container {
+  display: flex;
+}
+
+.contact-info {
+  margin-left: 2em;
+}
+
+.contact-item {
+  display: flex;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  &-info {
+    margin: 0 3em 0 0.5em;
+  }
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-form {
+  width: 65%;
+}
+
+.contact-info {
+  width: 35%;
+}
+
+.input-name,
+.input-email {
+  display: inline-block;
+  width: 47%;
+}

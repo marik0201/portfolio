@@ -1,0 +1,27 @@
+$input-background: #f7f7f7;
+$input-text-color: #a2a2a2;
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+.input-default {
+  background: $input-background;
+  color: $input-text-color;
+  height: 2.8em;
+  font-size: 1.2em;
+  border: none;
+  width: 100%;
+  padding: 0.3em 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.textarea-default {
+  background: $input-background;
+  color: $input-text-color;
+  height: 2.8em;
+  font-size: 1.2em;
+  border: none;
+  width: 100%;
+  padding: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  min-height: 10em;
+}
