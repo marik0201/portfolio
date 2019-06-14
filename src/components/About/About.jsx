@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './style.scss';
+
+const longstr = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo a cumque ducimus quidem beatae tempora eum, iste impedit, aliquid porro iure esse earum maxime. Voluptatibus facilis placeat vero quae error! lorem
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo a cumque ducimus quidem beatae tempora eum, iste impedit, aliquid porro iure esse earum maxime. Voluptatibus facilis placeat vero quae error! lorem`;
 
 export class About extends Component {
   render() {
@@ -8,16 +13,18 @@ export class About extends Component {
         <h1 className="mb-1">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore optio
-          quia suscipit iure officia minus nemo animi voluptatem! Est alias rem
-          hic autem explicabo totam earum, labore dolor debitis necessitatibus!
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis
-          praesentium nemo expedita in perferendis vel delectus, placeat debitis
-          ipsam unde, illo cupiditate amet impedit nihil. Earum fugiat placeat
-          suscipit laudantium.
-        </p>
-        <a className="btn mb-1">Show more</a>
+        <p>{longstr.substr(0, 200).concat('...')}</p>
+        <Link
+          to={{
+            pathname: '/about',
+            state: {
+              aboutInfo: longstr
+            }
+          }}
+          className="btn mb-1"
+        >
+          Show more
+        </Link>
       </section>
     );
   }

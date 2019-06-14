@@ -6,11 +6,13 @@ export class Header extends Component {
     return (
       <div className="header">
         <div className="image-container">
-          <img
-            className="profile-image"
-            src="https://media.licdn.com/dms/image/C5603AQHAuTx-7Gp5Hw/profile-displayphoto-shrink_200_200/0?e=1565827200&v=beta&t=itDjF3LHeJ2quAQdJc1L1ru7jwVCFAT_t_FENO8QJ9M"
-            alt=""
-          />
+          <a href="https://www.linkedin.com/in/mark-likhtar-4bb888187/">
+            <img
+              className="profile-image"
+              src="https://media.licdn.com/dms/image/C5603AQHAuTx-7Gp5Hw/profile-displayphoto-shrink_200_200/0?e=1565827200&v=beta&t=itDjF3LHeJ2quAQdJc1L1ru7jwVCFAT_t_FENO8QJ9M"
+              alt=""
+            />
+          </a>
         </div>
         <div className="header-about">
           <span>Hi, my name is Mark, im a Software Developer</span>

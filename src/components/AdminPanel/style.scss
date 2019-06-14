@@ -1,0 +1,30 @@
+@import '../../styles/colors.scss';
+
+.admin-panel-container {
+  display: flex;
+}
+
+.tabs-container {
+  width: 10%;
+  height: 100vh;
+  padding: 3em 0 3em 1em;
+  background-color: $bg-gray;
+  border-right: 1px solid $gray-light;
+
+  & li a {
+    text-align: right;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+  }
+}
+
+.tabs-content {
+}
+
+.uk-tab-left::before {
+  border: none;
+}
+
+.uk-tab > .uk-active > a {
+  border-right: 3px solid $gray-primary;
+}
