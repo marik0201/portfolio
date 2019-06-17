@@ -11,3 +11,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   box-sizing: border-box;
 }
+
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

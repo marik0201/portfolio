@@ -5,7 +5,7 @@ import './style.scss';
 export class Contact extends Component {
   render() {
     return (
-      <section className="mt-5 contact">
+      <section className="mt-5 contact" uk-scrollspy="cls: uk-animation-fade;">
         <h1 className="mt-4">Get in Touch</h1>
         <p className="mt-2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
