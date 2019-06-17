@@ -1,0 +1,18 @@
+@import '../../styles/colors.scss';
+
+.about-page-container {
+  padding: 5em;
+  font-size: 2em;
+  height: 2000px;
+}
+
+.main-link {
+  position: fixed;
+  left: 1em;
+  top: 1em;
+  color: $gray-primary;
+  &:hover {
+    color: $gray-light;
+    transition: 0.1s all ease;
+  }
+}

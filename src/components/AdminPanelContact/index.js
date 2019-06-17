@@ -1,0 +1,1 @@
+export { AdminPanelContact } from './AdminPanelContact';

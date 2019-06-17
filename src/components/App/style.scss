@@ -7,8 +7,14 @@
 body {
   margin: 0;
   font-size: 16px;
-  line-height: 1.7em;
   color: #7c7c7c;
   font-family: 'Source Sans Pro', sans-serif;
   box-sizing: border-box;
+}
+
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
