@@ -1,0 +1,15 @@
+@import '../../styles/colors.scss';
+
+.my-works {
+  border-top: 2px solid #c9c9c9;
+
+  & h1 {
+    color: $gray-primary;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

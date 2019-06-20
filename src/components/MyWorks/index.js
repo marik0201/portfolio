@@ -1,1 +1,0 @@
-export { MyWorks } from './MyWorks';

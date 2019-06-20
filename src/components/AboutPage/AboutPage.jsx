@@ -5,7 +5,7 @@ import './style.scss';
 
 export class AboutPage extends Component {
   componentDidMount() {
-    console.log(this.props.location.state.aboutInfo);
+    console.log(this.props.location.state.text);
   }
   render() {
     return (
@@ -16,9 +16,7 @@ export class AboutPage extends Component {
             data-uk-icon="icon: arrow-left; ratio:3"
           />
         </Link>
-        <p className="uk-animation-fade">
-          {this.props.location.state.aboutInfo}
-        </p>
+        <p className="uk-animation-fade">{this.props.location.state.text}</p>
       </div>
     );
   }

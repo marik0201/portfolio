@@ -5,8 +5,8 @@ import { getProfile } from './MainPageActions';
 
 const MainPageContainer = props => <MainPage {...props} />;
 
-const mapStateToProps = state => ({
-  state
+const mapStateToProps = ({ profile }) => ({
+  isLoaded: profile.isLoaded
 });
 
 const mapDispatchToProps = dispatch => ({

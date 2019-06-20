@@ -12,6 +12,14 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
 .preloader {
   position: absolute;
   top: 50%;
