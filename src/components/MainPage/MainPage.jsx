@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 
-import { Header } from '../Header';
 import { Main } from '../Main';
-import { getProfile } from '../../services/profile';
+import HeaderContainer from '../Header/HeaderContainer';
 
 export class MainPage extends Component {
   state = {
-    isLoading: true
+    isLoaded: this.props.isLoaded
   };
 
   componentDidMount = () => {
     this.props.getProfile();
+    console.log(this.props.state);
   };
 
   componentDidUpdate = prevProps => {
-    if (prevProps.state.profile.isLoaded != this.props.state.profile.isLoaded) {
+    if (prevProps.isLoaded != this.props.isLoaded) {
+      console.log('hi');
+
       this.setState({
-        isLoading: !this.props.state.profile.isLoaded
+        isLoaded: this.props.isLoaded
       });
     }
   };
@@ -24,11 +26,11 @@ export class MainPage extends Component {
   render() {
     return (
       <>
-        {this.state.isLoading ? (
+        {!this.state.isLoaded ? (
           <div className="preloader" data-uk-spinner="ratio: 3" />
         ) : (
           <>
-            <Header />
+            <HeaderContainer />
             <Main />
           </>
         )}

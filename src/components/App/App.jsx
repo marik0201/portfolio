@@ -1,19 +1,33 @@
-import React, { Component } from 'react';
+import React, { Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
-
 import '../../styles/index.scss';
 import './style.scss';
-import { AboutPage } from '../AboutPage';
-import MainPageContainer from '../MainPage/MainPageContainer';
-import { AdminPage } from '../AdminPage';
+
+const AboutPage = React.lazy(() => {
+  return Promise.all([
+    import('../AboutPage'),
+    new Promise(resolve => setTimeout(resolve, 2 * 1000))
+  ]).then(([moduleExports]) => moduleExports);
+});
+const MainPageContainer = React.lazy(() => {
+  return Promise.all([
+    import('../MainPage/MainPageContainer'),
+    new Promise(resolve => setTimeout(resolve, 1 * 1000))
+  ]).then(([moduleExports]) => moduleExports);
+});
+const AdminPage = React.lazy(() => import('../AdminPage'));
 
 export const App = () => (
   <>
-    <Switch>
-      <Route exact path="/" component={MainPageContainer} />
-      <Route path="/about" component={AboutPage} />
-      <Route path="/admin" component={AdminPage} />
-    </Switch>
+    <Suspense
+      fallback={<div className="preloader" data-uk-spinner="ratio: 3" />}
+    >
+      <Switch>
+        <Route exact path="/" component={MainPageContainer} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/admin" component={AdminPage} />
+      </Switch>
+    </Suspense>
   </>
 );
 

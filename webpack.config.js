@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isDevelopment = !process.env.production;
 
@@ -20,7 +21,10 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: ['babel-plugin-transform-class-properties']
+            plugins: [
+              'babel-plugin-transform-class-properties',
+              '@babel/plugin-syntax-dynamic-import'
+            ]
           }
         }
       },
@@ -58,14 +62,28 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name]_[hash:7].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
   devServer: {
     historyApiFallback: true
-},
+  },
   plugins: [
-    ///...
+    new HtmlWebpackPlugin({
+      favicon: './public/favicon.ico',
+      template: 'index.html'
+    }),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[hash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'

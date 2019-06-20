@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-import { About } from '../About';
-import { MyWorks } from '../MyWorks';
-import { Contact } from '../Contact';
+import ContactContainer from '../Contact/ContactContainer';
+import AboutContainer from '../About/AboutContainer';
 import './style.scss';
+import MyProjectsContainer from '../MyProjects/MyProjectsContainer';
 
 export class Main extends Component {
   render() {
     return (
       <div className="main">
-        <About />
-        <MyWorks />
-        <Contact />
+        <AboutContainer />
+        <MyProjectsContainer />
+        <ContactContainer />
       </div>
     );
   }

@@ -15,7 +15,7 @@ export class Header extends Component {
           </a>
         </div>
         <div className="header-about">
-          <span>{this.props.shortText}</span>
+          <span>{this.props.text}</span>
         </div>
         <div className="social-container">
           <a href="https://www.linkedin.com/in/mark-likhtar-4bb888187/">
