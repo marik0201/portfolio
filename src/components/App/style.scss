@@ -20,6 +20,10 @@ a {
   }
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 .preloader {
   position: absolute;
   top: 50%;

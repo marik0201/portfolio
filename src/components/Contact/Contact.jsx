@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 import './style.scss';
 
 export class Contact extends Component {
-  componentDidMount = () => {
-    console.log(this.props);
-  };
-
   render() {
     return (
       <section className="mt-5 contact" uk-scrollspy="cls: uk-animation-fade;">
