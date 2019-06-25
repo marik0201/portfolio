@@ -4,11 +4,10 @@
   width: 45%;
   text-align: center;
   & img {
-    width: 80%;
     height: 20em;
     margin: 0 auto;
-    object-fit: scale-down;
     border-radius: 8px;
+    object-fit: scale-down;
   }
   & span {
     line-height: 2.5em;
@@ -31,6 +30,19 @@
   }
 }
 
+.modal-image-wrap {
+  background-color: #e4edfb;
+}
+
 .uk-flex-top > .modal > h2 {
   margin-bottom: 1em;
 }
+
+.project-readme {
+  text-align: left;
+  padding: 1em;
+}
+
+// .uk-slider-items > * {
+//   flex: auto;
+// }

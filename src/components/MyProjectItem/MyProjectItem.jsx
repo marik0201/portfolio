@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown';
 import './style.scss';
 
 const MyProjectItem = ({ project }) => {
-  console.log(project);
   const languages = require('../../enums/languageImages');
 
   const img = project.image
@@ -16,8 +15,13 @@ const MyProjectItem = ({ project }) => {
 
   return (
     <>
-      <div className="my-works__item mb-3">
-        <img data-uk-toggle={`target: #modal-center${project._id}`} src={img} />
+      <div className="my-works__item mb-3 uk-animation-slide-right-medium">
+        <div className={!project.image ? `modal-image-wrap` : ''}>
+          <img
+            data-uk-toggle={`target: #modal-center${project._id}`}
+            src={img}
+          />
+        </div>
         <span>{project.projectName}</span>
       </div>
       <div
@@ -27,12 +31,16 @@ const MyProjectItem = ({ project }) => {
       >
         <div className="modal uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
           <button className="uk-modal-close-default" data-uk-close />
-          <img src={img} />
-          <h2>{project.projectName}</h2>
+          <div className={!project.image ? `modal-image-wrap` : ''}>
+            <img src={img} />
+          </div>
+          <h2>
+            <a href={project.projectUrl}>{project.projectName}</a>
+          </h2>
           {project.readme && (
-            <p>
+            <div className="project-readme">
               <ReactMarkdown source={project.readme} />
-            </p>
+            </div>
           )}
         </div>
       </div>

@@ -10,13 +10,10 @@ export class MainPage extends Component {
 
   componentDidMount = () => {
     this.props.getProfile();
-    console.log(this.props.state);
   };
 
   componentDidUpdate = prevProps => {
     if (prevProps.isLoaded != this.props.isLoaded) {
-      console.log('hi');
-
       this.setState({
         isLoaded: this.props.isLoaded
       });
