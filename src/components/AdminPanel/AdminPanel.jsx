@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
+import AdminPanelContacts from './AdminPanelContacts';
 
 import './style.scss';
+import LocalStorage from '../../services/local-storage';
+import history from '../../helpers/history';
+import AdminPanelContactsContainer from './AdminPanelContactsContainer';
 
 export class AdminPanel extends Component {
+  constructor(props) {
+    super(props);
+
+    !LocalStorage.isLogin() && history.push('/login');
+  }
   render() {
     return (
       <div className="admin-panel-container">
@@ -33,8 +42,7 @@ export class AdminPanel extends Component {
               nisi ut aliquip ex ea commodo consequat.
             </li>
             <li>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur, sed do eiusmod.
+              <AdminPanelContactsContainer />
             </li>
           </ul>
         </div>

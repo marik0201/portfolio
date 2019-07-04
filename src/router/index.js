@@ -19,6 +19,15 @@ export const ROUTES = [
     id: 3,
     path: '/admin',
     exact: false,
-    component: React.lazy(() => import('../components/AdminPage'))
+    withAuth: true,
+    component: React.lazy(() => import('../components/AdminPanel'))
+  },
+  {
+    id: 4,
+    path: '/login',
+    exact: false,
+    component: React.lazy(() =>
+      import('../components/LoginForm/LoginFormContainer')
+    )
   }
 ];

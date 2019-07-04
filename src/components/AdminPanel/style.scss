@@ -18,7 +18,41 @@
   }
 }
 
+.admin-contacts-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-edit-wrap {
+  display: flex;
+
+  & input {
+    width: 60%;
+  }
+
+  & .btn {
+    width: 10%;
+    margin-left: 1em;
+    padding: 0.3em;
+    text-align: center;
+  }
+}
+
 .tabs-content {
+  & label input {
+    margin-right: 1em;
+  }
+
+  .uk-checkbox {
+    width: 40px;
+    height: 40px;
+
+    &:checked,
+    &:focus {
+      background-color: #7c7c7c;
+      border-color: #7c7c7c;
+    }
+  }
 }
 
 .uk-tab-left::before {
