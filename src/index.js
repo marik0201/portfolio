@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 
 import { App } from './components/App';
 import rootReducer from './reducers/index';
+import history from './helpers/history';
 
 const store = createStore(
   rootReducer,
@@ -16,7 +17,7 @@ const store = createStore(
 
 render(
   <Provider store={store}>
-    <Router>
+    <Router history={history}>
       <App />
     </Router>
   </Provider>,
