@@ -6,7 +6,8 @@
 
 .tabs-container {
   width: 10%;
-  height: 100vh;
+  height: 100%;
+  position: fixed;
   padding: 3em 0 3em 1em;
   background-color: $bg-gray;
   border-right: 1px solid $gray-light;
@@ -18,9 +19,25 @@
   }
 }
 
-.admin-contacts-wrap {
+.admin-contacts-wrap,
+.admin-profile-wrap {
   display: flex;
   flex-direction: column;
+}
+
+.admin-profile-wrap > div {
+  display: flex;
+
+  & input {
+    width: 60%;
+  }
+
+  & .btn {
+    width: 10%;
+    margin-left: 1em;
+    padding: 0.3em;
+    text-align: center;
+  }
 }
 
 .contact-edit-wrap {
@@ -39,6 +56,8 @@
 }
 
 .tabs-content {
+  margin-left: 13%;
+
   & label input {
     margin-right: 1em;
   }
@@ -61,4 +80,18 @@
 
 .uk-tab > .uk-active > a {
   border-right: 3px solid $gray-primary;
+}
+
+.admin-profile-wrap .quill {
+  flex-direction: column;
+  width: 80%;
+
+  & .ql-container {
+    min-height: 10em;
+  }
+}
+
+.quill-btn {
+  text-align: center;
+  width: 10%;
 }

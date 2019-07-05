@@ -25,10 +25,12 @@ export const onPageLoadedFailed = payload => ({
 
 export const getProfile = () => async dispatch => {
   try {
-    const about = await getInfoAbout();
-    const contacts = await getContacts();
-    const projects = await getProjectsPage(0);
-    const projectsPages = await getProjectsPages();
+    const [about, contacts, projects, projectsPages] = await Promise.all([
+      getInfoAbout(),
+      getContacts(),
+      getProjectsPage(),
+      getProjectsPages()
+    ]);
 
     const pages = [projects.data.projects];
     pages.length = projectsPages.data.projectsPages;
@@ -48,7 +50,6 @@ export const getProfile = () => async dispatch => {
 export const changePage = page => async dispatch => {
   try {
     const projects = await getProjectsPage(page - 1);
-
     dispatch(onPageLoadedSuccess({ projects: [projects.data.projects], page }));
   } catch (error) {
     dispatch(onPageLoadedFailed());

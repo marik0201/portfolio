@@ -1,0 +1,4 @@
+export default {
+  ON_LOGIN_SUCCESS: 'ON_LOGIN_SUCCESS',
+  ON_LOGIN_FAILED: 'ON_LOGIN_FAILED'
+};
