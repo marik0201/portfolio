@@ -25,6 +25,16 @@ export const adminPanel = (state = initialState, { type, payload }) => {
     case types.CONTACT_EMAIL_EDIT_FAILED:
       return { ...state };
 
+    case types.CONTACT_VISIBILITY_CHANGE_SUCCESS:
+      const isVisible = !state.isVisible;
+      return { ...state, isVisible };
+
+    case types.ON_PROFILE_LOAD_SUCCESS:
+      return { ...state, ...payload };
+
+    case types.ON_PROFILE_LOAD_FAILED:
+      return { ...state };
+
     default:
       return state;
   }

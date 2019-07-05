@@ -5,5 +5,5 @@ export const getProfile = async () => {
   const about = await getInfoAbout();
   const contacts = await getContacts();
 
-  return { about, contacts };
+  return { about, contacts, avatar };
 };

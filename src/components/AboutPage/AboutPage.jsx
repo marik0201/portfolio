@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ReactHtmlParser from 'react-html-parser';
 
 import './style.scss';
 
 export class AboutPage extends Component {
-  componentDidMount() {
-    console.log(this.props.location.state.text);
-  }
   render() {
     return (
       <div className="about-page-container">
@@ -16,7 +14,9 @@ export class AboutPage extends Component {
             data-uk-icon="icon: arrow-left; ratio:3"
           />
         </Link>
-        <p className="uk-animation-fade">{this.props.location.state.text}</p>
+        <div className="uk-animation-fade">
+          {ReactHtmlParser(this.props.location.state.text)}
+        </div>
       </div>
     );
   }

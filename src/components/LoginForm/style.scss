@@ -25,6 +25,13 @@
     border-radius: 3px;
     color: #fff;
   }
+
+  & .error-span {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .login-form-background {

@@ -10,14 +10,24 @@ class AdminPanelContacts extends Component {
     this.props.getContacts();
 
     this.state = {
-      isVisible: false
+      isVisible: undefined
     };
   }
 
-  visibleChange = () => {
+  visibleChange = async () => {
+    await this.props.toggleContactVisibility();
+
     this.setState(prevState => ({
       isVisible: !prevState.isVisible
     }));
+  };
+
+  componentDidUpdate = () => {
+    if (this.props.adminPanel.isVisible !== this.state.isVisible) {
+      this.setState({
+        isVisible: this.props.adminPanel.isVisible
+      });
+    }
   };
 
   render() {

@@ -5,6 +5,7 @@ import './style.scss';
 import LocalStorage from '../../services/local-storage';
 import history from '../../helpers/history';
 import AdminPanelContactsContainer from './AdminPanelContactsContainer';
+import AdminPanelProfileContainer from './AdminPanelProfileContainer';
 
 export class AdminPanel extends Component {
   constructor(props) {
@@ -34,8 +35,7 @@ export class AdminPanel extends Component {
         <div className="tabs-content m-3 uk-width-expand@m">
           <ul id="component-tab-left" className="uk-switcher">
             <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <AdminPanelProfileContainer />
             </li>
             <li>
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris

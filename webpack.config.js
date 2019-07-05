@@ -29,6 +29,10 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      },
+      {
         test: /\.module\.s(a|c)ss$/,
         loader: [
           isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -90,6 +94,6 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.scss']
+    extensions: ['*', '.js', '.jsx', '.scss', '.css']
   }
 };

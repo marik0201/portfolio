@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ReactHtmlParser from 'react-html-parser';
 
 import './style.scss';
 
@@ -8,7 +9,8 @@ export class About extends Component {
     return (
       <section className="about">
         <h1 className="mb-1">{this.props.title}</h1>
-        <p>{this.props.text.substr(0, 200).concat('...')}</p>
+        {ReactHtmlParser(this.props.text.substr(0, 200).concat('...'))}
+        {/* <p>{this.props.text.substr(0, 200).concat('...')}</p> */}
         <Link
           to={{
             pathname: '/about',

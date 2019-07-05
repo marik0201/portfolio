@@ -5,7 +5,8 @@ import {
   getContactInfo,
   editAddressInfo,
   editTelephoneInfo,
-  editEmailInfo
+  editEmailInfo,
+  toggleContactVisibility
 } from './AdminPanelActions';
 
 const AdminPanelContactsContainer = props => <AdminPanelContacts {...props} />;
@@ -26,6 +27,9 @@ const mapDispatchToProps = dispatch => ({
   },
   editEmail: async email => {
     dispatch(editEmailInfo(email));
+  },
+  toggleContactVisibility: async () => {
+    dispatch(toggleContactVisibility());
   }
 });
 

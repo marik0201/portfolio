@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import { ROUTES } from '../../router';
 import '../../styles/index.scss';
 import './style.scss';
+import LocalStorage from '../../services/local-storage';
+// import { history } from '../..';
 
 export const App = () => (
   <>
@@ -25,3 +27,13 @@ export const App = () => (
 );
 
 export default App;
+
+// function withAuthWrapper(route) {
+//   const Component = route.component;
+
+//   if (route.withAuth && !LocalStorage.isLogin()) {
+//     return <Redirect path="/" />;
+//   }
+
+//   return <Component {...this.props} />;
+// }
