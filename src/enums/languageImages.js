@@ -1,5 +1,7 @@
 export default {
   JavaScript: 'JavaScript',
   'C#': 'CSharp',
-  PHP: 'PHP'
+  PHP: 'PHP',
+  HTML: 'HTML',
+  CSS: 'CSS'
 };

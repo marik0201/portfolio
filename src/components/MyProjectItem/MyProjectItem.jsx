@@ -6,9 +6,9 @@ import './style.scss';
 
 const MyProjectItem = ({ project }) => {
   const languages = require('../../enums/languageImages');
-
   const img = project.image
-    ? `data:image/jpeg;base64,${arrayBufferToBase64(project.image.data)}`
+    ? // ? `data:image/jpeg;base64,${arrayBufferToBase64(project.image.data)}`
+      project.image
     : require(`../../assets/icons/${
         languages.default[project.projectLanguage]
       }.png`);

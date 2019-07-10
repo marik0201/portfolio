@@ -1,1 +1,0 @@
-export { AdminPanelContent } from './AdminPanelContent';

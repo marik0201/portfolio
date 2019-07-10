@@ -13,12 +13,13 @@ import {
 const AdminPanelProfileContainer = props => <AdminPanelProfile {...props} />;
 
 const mapStateToProps = ({
-  adminPanel: { shortText, text, linkedinLink, githubLink }
+  adminPanel: { shortText, text, linkedinLink, githubLink, isProfileLoading }
 }) => ({
   shortText,
   text,
   linkedinLink,
-  githubLink
+  githubLink,
+  isProfileLoading
 });
 
 const mapDispatchToProps = dispatch => ({
