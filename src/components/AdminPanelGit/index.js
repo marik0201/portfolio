@@ -1,1 +1,0 @@
-export { AdminPanelGit } from './AdminPanelGit';

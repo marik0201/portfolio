@@ -15,6 +15,43 @@ import {
   editText
 } from '../../api/admin/profile';
 import { getInfoAbout } from '../../api/about';
+import {
+  editGit,
+  editProjectName,
+  editProjectImage,
+  editProjectReadme
+} from '../../api/admin/projects';
+import { getProjectsNames, getProject } from '../../api/projects';
+
+export const profilePageLoading = payload => ({
+  type: types.PROFILE_PAGE_LOADING,
+  payload
+});
+
+export const profilePageLoaded = payload => ({
+  type: types.PROFILE_PAGE_LOADED,
+  payload
+});
+
+export const projectPageLoading = payload => ({
+  type: types.PROJECT_PAGE_LOADING,
+  payload
+});
+
+export const projectPageLoaded = payload => ({
+  type: types.PROJECT_PAGE_LOADED,
+  payload
+});
+
+export const contactsPageLoading = payload => ({
+  type: types.CONTACTS_PAGE_LOADING,
+  payload
+});
+
+export const contactsPageLoaded = payload => ({
+  type: types.CONTACTS_PAGE_LOADED,
+  payload
+});
 
 export const onContactsLoadSuccess = payload => ({
   type: types.ON_CONTACTS_LOAD_SUCCESS,
@@ -106,6 +143,56 @@ export const onTextEditFailed = payload => ({
   payload
 });
 
+export const projectNamesLoadSuccess = payload => ({
+  type: types.PROJECTNAMES_LOAD_SUCCESS,
+  payload
+});
+
+export const projectNamesLoadFailed = payload => ({
+  type: types.PROJECTNAMES_LOAD_FAILED,
+  payload
+});
+
+export const projectInfoLoadSuccess = payload => ({
+  type: types.PROJECT_INFO_LOAD_SUCCESS,
+  payload
+});
+
+export const projectInfoLoadFailed = payload => ({
+  type: types.PROJECT_INFO_LOAD_FAILED,
+  payload
+});
+
+export const projectEditNameSuccess = payload => ({
+  type: types.PROJECT_EDIT_NAME_SUCCESS,
+  payload
+});
+
+export const projectEditNameFailed = payload => ({
+  type: types.PROJECT_EDIT_NAME_FAILED,
+  payload
+});
+
+export const projectEditImageSuccess = payload => ({
+  type: types.PROJECT_EDIT_IMAGE_SUCCESS,
+  payload
+});
+
+export const projectEditImageFailed = payload => ({
+  type: types.PROJECT_EDIT_IMAGE_FAILED,
+  payload
+});
+
+export const projectEditReadmeSuccess = payload => ({
+  type: types.PROJECT_EDIT_README_SUCCESS,
+  payload
+});
+
+export const projectEditReadmeFailed = payload => ({
+  type: types.PROJECT_EDIT_README_FAILED,
+  payload
+});
+
 export const editAddressInfo = address => async dispatch => {
   try {
     if (!address) {
@@ -156,10 +243,13 @@ export const editEmailInfo = email => async dispatch => {
 
 export const getContactInfo = () => async dispatch => {
   try {
+    dispatch(contactsPageLoading());
     const contacts = await getContacts();
     dispatch(onContactsLoadSuccess(contacts.data.contacts[0]));
   } catch (error) {
     cogoToast.error('Server Error');
+  } finally {
+    dispatch(contactsPageLoaded());
   }
 };
 
@@ -184,11 +274,14 @@ export const uploadImage = avatar => async dispatch => {
 
 export const getAboutInfo = () => async dispatch => {
   try {
+    dispatch(profilePageLoading());
     const about = await getInfoAbout();
     dispatch(onProfileLoadSuccess(about.data.about[0]));
   } catch (error) {
     dispatch(onProfileLoadFailed());
     cogoToast.error('Server Error');
+  } finally {
+    dispatch(profilePageLoaded());
   }
 };
 
@@ -233,5 +326,86 @@ export const editTextInfo = text => async dispatch => {
   } catch (error) {
     cogoToast.error('Server error');
     dispatch(onTextEditFailed());
+  }
+};
+
+export const editGitUserName = username => async dispatch => {
+  try {
+    dispatch(pageLoading());
+    await editGit(username);
+    cogoToast.success('Git link was changed');
+  } catch (error) {
+    cogoToast.error('Server error');
+    dispatch(onTextEditFailed());
+  } finally {
+    dispatch(pageLoaded());
+  }
+};
+
+export const getProjectNames = () => async dispatch => {
+  try {
+    dispatch(projectPageLoading());
+    const projectsNames = await getProjectsNames();
+    dispatch(projectNamesLoadSuccess(projectsNames.data.projectNames));
+  } catch (error) {
+    cogoToast.error('Server error');
+    dispatch(projectNamesLoadFailed());
+  } finally {
+    dispatch(projectPageLoaded());
+  }
+};
+
+export const getProjectInfo = id => async dispatch => {
+  try {
+    dispatch(projectPageLoading());
+    const project = await getProject(id);
+    dispatch(projectInfoLoadSuccess(project.data.project));
+  } catch (error) {
+    cogoToast.error('Server error');
+    dispatch(projectInfoLoadFailed());
+  } finally {
+    dispatch(projectPageLoaded());
+  }
+};
+
+export const editNameProject = (name, id) => async dispatch => {
+  try {
+    dispatch(projectPageLoading());
+    await editProjectName(name, id);
+    cogoToast.success('Name was changed');
+    dispatch(projectEditNameSuccess());
+  } catch (error) {
+    cogoToast.error('Server error');
+    dispatch(projectEditNameFailed());
+  } finally {
+    dispatch(projectPageLoaded());
+  }
+};
+
+export const editImageLink = (link, id) => async dispatch => {
+  try {
+    dispatch(projectPageLoading());
+    await editProjectImage(link, id);
+    cogoToast.success('Image was changed');
+    dispatch(projectEditImageSuccess());
+  } catch (error) {
+    cogoToast.error('Server error');
+    dispatch(projectEditImageFailed());
+  } finally {
+    dispatch(projectPageLoaded());
+  }
+};
+
+export const editReadme = (readme, id) => async dispatch => {
+  try {
+    dispatch(projectPageLoading());
+    await editProjectReadme(readme, id);
+    cogoToast.success('readme was changed');
+    dispatch(projectEditReadmeSuccess());
+  } catch (error) {
+    cogoToast.error('Server error');
+    dispatch(projectEditReadmeFailed());
+  } finally {
+    dispatch(projectPageLoaded());
   }
 };

@@ -15,4 +15,6 @@ export default class LocalStorage {
       : false;
 
   static getToken = () => localStorage.getItem('token');
+
+  static getRefreshToken = () => localStorage.getItem('refreshToken');
 }

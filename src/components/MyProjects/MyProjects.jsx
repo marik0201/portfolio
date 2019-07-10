@@ -9,7 +9,7 @@ export class MyProjects extends Component {
     page: 1
   };
 
-  changePage = async page => {
+  changePage = page => {
     if (this.props.pages[page - 1] !== undefined) {
       this.setState({
         page
@@ -23,11 +23,7 @@ export class MyProjects extends Component {
     }
   };
 
-  nextPage = () => {
-    console.log(':D');
-  };
-
-  render = () => {
+  render() {
     const page = this.state.page;
     return (
       <section className="mt-5 my-works">
@@ -70,7 +66,7 @@ export class MyProjects extends Component {
         </div>
       </section>
     );
-  };
+  }
 }
 
 export default MyProjects;
