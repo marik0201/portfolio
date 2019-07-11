@@ -21,9 +21,10 @@ export class LoginForm extends Component {
         errorMessage: 'Enter login/password'
       });
     } else {
-      this.props
-        .signIn(this.loginRef.current.value, this.passwordRef.current.value)
-        .then(() => (this.passwordRef.current.value = ''));
+      this.props.signIn(
+        this.loginRef.current.value,
+        this.passwordRef.current.value
+      );
     }
   };
 
