@@ -11,11 +11,8 @@ axios.interceptors.response.use(
 
       if (error.response.status === 401) {
         const token = await getToken();
-
-        await LocalStorage.putTokens(token.data.token, token.data.refreshToken);
-
-        originalRequest.headers['Authorization'] = token.data.token;
-
+        originalRequest.headers['Authorization'] = `JWT ${token.data.token}`;
+        LocalStorage.putTokens(token.data.token, token.data.refreshToken);
         return axios(originalRequest);
       }
     } catch (error) {
