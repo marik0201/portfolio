@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export default class AdminPanelProjects extends Component {
+export class AdminPanelProjects extends Component {
   constructor(props) {
     super(props);
     this.gitUserName = React.createRef();
@@ -144,3 +145,17 @@ export default class AdminPanelProjects extends Component {
     );
   }
 }
+
+AdminPanelProjects.propTypes = {
+  editGitUserName: PropTypes.func,
+  getProjectNames: PropTypes.func,
+  getProjectInfo: PropTypes.func,
+  editNameProject: PropTypes.func,
+  editImageLink: PropTypes.func,
+  editReadme: PropTypes.func,
+  isProjectsLoading: PropTypes.bool,
+  projectNames: PropTypes.array,
+  projects: PropTypes.object
+};
+
+export default AdminPanelProjects;

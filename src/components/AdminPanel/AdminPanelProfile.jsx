@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactQuill from 'react-quill';
+import PropTypes from 'prop-types';
 import 'react-quill/dist/quill.snow.css';
 
 export class AdminPanelProfile extends Component {
@@ -53,7 +54,7 @@ export class AdminPanelProfile extends Component {
         ) : (
           <div className="admin-profile-wrap">
             <h3>Profile photo</h3>
-            <div className="avatar-edit-wrap">
+            <div className="avatar-edit-wrap input-edit-wrap ">
               <input type="file" onChange={this.onChangeFile} />
               <a type="button" className="btn" onClick={this.uploadFile}>
                 Upload File
@@ -61,7 +62,7 @@ export class AdminPanelProfile extends Component {
             </div>
 
             <h3>Edit description</h3>
-            <div className="shortText-edit-wrap">
+            <div className="shortText-edit-wrap input-edit-wrap">
               <input
                 className="input-default"
                 type="text"
@@ -74,7 +75,7 @@ export class AdminPanelProfile extends Component {
             </div>
 
             <h3>Edit linkedin link</h3>
-            <div className="ldLink-edit-wrap">
+            <div className="ldLink-edit-wrap input-edit-wrap">
               <input
                 className="input-default"
                 type="text"
@@ -87,7 +88,7 @@ export class AdminPanelProfile extends Component {
             </div>
 
             <h3>Edit github link</h3>
-            <div className="gitLink-edit-wrap">
+            <div className="gitLink-edit-wrap input-edit-wrap">
               <input
                 className="input-default"
                 type="text"
@@ -114,5 +115,19 @@ export class AdminPanelProfile extends Component {
     );
   }
 }
+
+AdminPanelProfile.propTypes = {
+  uploadAvatar: PropTypes.func,
+  getInfoAbout: PropTypes.func,
+  editDescription: PropTypes.func,
+  editLinkedinLink: PropTypes.func,
+  editGitLink: PropTypes.func,
+  editTextInfo: PropTypes.func,
+  shortText: PropTypes.string,
+  text: PropTypes.string,
+  linkedinLink: PropTypes.string,
+  githubLink: PropTypes.string,
+  isProfileLoading: PropTypes.bool
+};
 
 export default AdminPanelProfile;

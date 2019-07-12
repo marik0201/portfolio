@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import MyProjectItem from '../MyProjectItem/MyProjectItem';
 import './style.scss';
 
 export class MyProjects extends Component {
   state = {
-    projectsPages: this.props.projectsPages,
     page: 1
   };
 
@@ -68,5 +68,10 @@ export class MyProjects extends Component {
     );
   }
 }
+
+MyProjects.propTypes = {
+  changePage: PropTypes.func,
+  pages: PropTypes.array
+};
 
 export default MyProjects;

@@ -3,3 +3,11 @@
   margin: 0 5% 0 35%;
   padding: 10em 4em 2em 4em;
 }
+
+@media screen and (max-width: 1024px) {
+  .main {
+    width: 65%;
+    margin: 0 5% 0 30%;
+    padding: 8em 0 2em 4em;
+  }
+}

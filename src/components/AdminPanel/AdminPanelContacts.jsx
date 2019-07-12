@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class AdminPanelContacts extends Component {
   constructor(props) {
@@ -103,5 +104,14 @@ class AdminPanelContacts extends Component {
     );
   }
 }
+
+AdminPanelContacts.propTypes = {
+  getContacts: PropTypes.func,
+  editAddress: PropTypes.func,
+  editTelephone: PropTypes.func,
+  editEmail: PropTypes.func,
+  toggleContactVisibility: PropTypes.func,
+  adminPanel: PropTypes.object
+};
 
 export default AdminPanelContacts;

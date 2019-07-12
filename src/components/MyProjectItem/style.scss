@@ -43,6 +43,8 @@
   padding: 1em;
 }
 
-// .uk-slider-items > * {
-//   flex: auto;
-// }
+@media screen and (max-width: 1024px) {
+  .modal {
+    width: 70%;
+  }
+}

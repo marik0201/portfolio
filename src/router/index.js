@@ -20,9 +20,7 @@ export const ROUTES = [
     path: '/admin',
     exact: false,
     withAuth: true,
-    component: React.lazy(() =>
-      import('../components/AdminPanel/AdminPanelContainer')
-    )
+    component: React.lazy(() => import('../components/AdminPanel'))
   },
   {
     id: 4,

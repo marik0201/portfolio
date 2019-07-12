@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 
 import './style.scss';
 
@@ -57,5 +58,9 @@ export class LoginForm extends Component {
     );
   }
 }
+
+LoginForm.propTypes = {
+  signIn: PropTypes.func
+};
 
 export default withRouter(LoginForm);

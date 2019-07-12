@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Main } from '../Main';
 import HeaderContainer from '../Header/HeaderContainer';
@@ -35,5 +36,10 @@ export class MainPage extends Component {
     );
   }
 }
+
+MainPage.propTypes = {
+  isLoaded: PropTypes.bool,
+  getProfile: PropTypes.func
+};
 
 export default MainPage;

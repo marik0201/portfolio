@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AdminPanelContacts from './AdminPanelContacts';
 
 import './style.scss';
 import LocalStorage from '../../services/local-storage';
@@ -8,7 +7,7 @@ import AdminPanelContactsContainer from './AdminPanelContactsContainer';
 import AdminPanelProfileContainer from './AdminPanelProfileContainer';
 import AdminPanelProjectsContainer from './AdminPanelProjectsContainer';
 
-class AdminPanel extends Component {
+export class AdminPanel extends Component {
   constructor(props) {
     super(props);
 
