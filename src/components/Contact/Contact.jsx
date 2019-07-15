@@ -29,7 +29,7 @@ export class Contact extends Component {
       return (
         <section
           className="mt-5 contact"
-          uk-scrollspy="cls: uk-animation-fade;"
+          data-uk-scrollspy="cls: uk-animation-fade;"
         >
           <h1 className="mt-4">Get in Touch</h1>
           <p className="mt-2">

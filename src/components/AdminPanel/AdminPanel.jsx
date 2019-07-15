@@ -26,7 +26,7 @@ export class AdminPanel extends Component {
           <div className="tabs-container  uk-width-auto@m">
             <ul
               className="uk-tab-left"
-              uk-tab="connect: #component-tab-left; animation: uk-animation-fade"
+              data-uk-tab="connect: #component-tab-left; animation: uk-animation-fade"
             >
               <li>
                 <a href="#">Profile</a>

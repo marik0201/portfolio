@@ -331,14 +331,14 @@ export const editTextInfo = text => async dispatch => {
 
 export const editGitUserName = username => async dispatch => {
   try {
-    dispatch(pageLoading());
+    dispatch(projectPageLoading());
     await editGit(username);
     cogoToast.success('Git link was changed');
   } catch (error) {
     cogoToast.error('Server error');
     dispatch(onTextEditFailed());
   } finally {
-    dispatch(pageLoaded());
+    dispatch(projectPageLoaded());
   }
 };
 

@@ -10,9 +10,7 @@ export default class LocalStorage {
   };
 
   static isLogin = () =>
-    localStorage.getItem('token') && localStorage.getItem('refreshToken')
-      ? true
-      : false;
+    localStorage.getItem('token') && localStorage.getItem('refreshToken');
 
   static getToken = () => localStorage.getItem('token');
 

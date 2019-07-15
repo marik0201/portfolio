@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const isDevelopment = !process.env.production;
 
@@ -84,6 +85,9 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
+    new Dotenv({
+      path: './.env'
+    }),
     new HtmlWebpackPlugin({
       favicon: './public/favicon.ico',
       template: 'index.html'
@@ -93,6 +97,9 @@ module.exports = {
       chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
     })
   ],
+  node: {
+    fs: 'empty'
+  },
   resolve: {
     extensions: ['*', '.js', '.jsx', '.scss', '.css']
   }

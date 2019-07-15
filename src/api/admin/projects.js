@@ -3,7 +3,7 @@ import LocalStorage from '../../services/local-storage';
 
 export const editGit = async username => {
   return await axios.post(
-    'http://localhost:3000/api/admin/projects/git-user',
+    `${process.env.SERVER_PATH}/api/admin/projects/git-user`,
     {
       username
     },
@@ -18,7 +18,7 @@ export const editGit = async username => {
 
 export const editProjectImage = async (imageLink, projectId) => {
   return await axios.post(
-    `http://localhost:3000/api/admin/projects/${projectId}/image`,
+    `${process.env.SERVER_PATH}/api/admin/projects/${projectId}/image`,
     {
       imageLink
     },
@@ -33,7 +33,7 @@ export const editProjectImage = async (imageLink, projectId) => {
 
 export const editProjectName = async (projectName, projectId) => {
   return await axios.post(
-    `http://localhost:3000/api/admin/projects/${projectId}/name`,
+    `${process.env.SERVER_PATH}/api/admin/projects/${projectId}/name`,
     {
       projectName
     },
@@ -48,7 +48,7 @@ export const editProjectName = async (projectName, projectId) => {
 
 export const editProjectReadme = async (readme, projectId) => {
   return await axios.post(
-    `http://localhost:3000/api/admin/projects/${projectId}/name`,
+    `${process.env.SERVER_PATH}/api/admin/projects/${projectId}/name`,
     {
       readme
     },

@@ -3,7 +3,7 @@ import LocalStorage from '../../services/local-storage';
 
 export const editContactAddress = async address => {
   return await axios.post(
-    'http://localhost:3000/api/admin/address',
+    `${process.env.SERVER_PATH}/api/admin/address`,
     {
       address
     },
@@ -18,7 +18,7 @@ export const editContactAddress = async address => {
 
 export const editContactTelephone = async telephone => {
   return await axios.post(
-    'http://localhost:3000/api/admin/telephone',
+    `${process.env.SERVER_PATH}/api/admin/telephone`,
     {
       telephone
     },
@@ -33,7 +33,7 @@ export const editContactTelephone = async telephone => {
 
 export const editContactEmail = async email => {
   return await axios.post(
-    'http://localhost:3000/api/admin/email',
+    `${process.env.SERVER_PATH}/api/admin/email`,
     { email },
     {
       headers: {
@@ -46,7 +46,7 @@ export const editContactEmail = async email => {
 
 export const changeContactsVisibiliy = async () => {
   return await axios.post(
-    'http://localhost:3000/api/admin/contact/visibility',
+    `${process.env.SERVER_PATH}/api/admin/contact/visibility`,
     {},
     {
       headers: {

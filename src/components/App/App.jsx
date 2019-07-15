@@ -23,15 +23,3 @@ export const App = () => (
     </Suspense>
   </>
 );
-
-export default App;
-
-// function withAuthWrapper(route) {
-//   const Component = route.component;
-
-//   if (route.withAuth && !LocalStorage.isLogin()) {
-//     return <Redirect path="/" />;
-//   }
-
-//   return <Component {...this.props} />;
-// }

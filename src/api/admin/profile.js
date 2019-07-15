@@ -3,7 +3,7 @@ import LocalStorage from '../../services/local-storage';
 
 export const uploadAvatarImage = async avatar => {
   return await axios.post(
-    'http://localhost:3000/api/admin/profile/avatar',
+    `${process.env.SERVER_PATH}/api/admin/profile/avatar`,
     avatar,
     {
       headers: {
@@ -16,7 +16,7 @@ export const uploadAvatarImage = async avatar => {
 export const editLinkGit = async link => {
   const linkedinlink = link;
   return await axios.post(
-    'http://localhost:3000/api/admin/about/githublink',
+    `${process.env.SERVER_PATH}/api/admin/about/githublink`,
     { linkedinlink },
     {
       headers: {
@@ -29,7 +29,7 @@ export const editLinkGit = async link => {
 export const editLinkLinkedin = async link => {
   const githublink = link;
   return await axios.post(
-    'http://localhost:3000/api/admin/about/linkedinlink',
+    `${process.env.SERVER_PATH}/api/admin/about/linkedinlink`,
     { githublink },
     {
       headers: {
@@ -42,7 +42,7 @@ export const editLinkLinkedin = async link => {
 export const editShortText = async text => {
   const shorttext = text;
   return await axios.post(
-    'http://localhost:3000/api/admin/about/shorttext',
+    `${process.env.SERVER_PATH}/api/admin/about/shorttext`,
     { shorttext },
     {
       headers: {
@@ -54,7 +54,7 @@ export const editShortText = async text => {
 
 export const editText = async text => {
   return await axios.post(
-    'http://localhost:3000/api/admin/about/text',
+    `${process.env.SERVER_PATH}/api/admin/about/text`,
     { text },
     {
       headers: {

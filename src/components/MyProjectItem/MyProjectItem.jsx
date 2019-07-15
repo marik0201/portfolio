@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { arrayBufferToBase64 } from '../../helpers/base64convert';
 import './style.scss';
 
 class MyProjectItem extends Component {
